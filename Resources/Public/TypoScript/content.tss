@@ -1,0 +1,10 @@
+lib.stdheader = COA
+lib.stdheader {
+	stdWrap.dataWrap >
+	2.headerStyle >
+	3.headerClass >
+}
+
+tt_content.stdWrap.dataWrap =
+
+lib.parseFunc_RTE.nonTypoTagStdWrap.encapsLines.addAttributes.P.class >

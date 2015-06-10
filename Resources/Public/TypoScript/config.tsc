@@ -1,0 +1,14 @@
+domain = industrieschule.localhost
+
+PID {
+	nav {
+		main = 4
+		footer = 5	
+	}
+	storage {
+		news = 36
+	}
+	single {
+		news = 35
+	}
+}

@@ -1,0 +1,2 @@
+<INCLUDE_TYPOSCRIPT: source="FILE: EXT:stundenplan/Resources/Public/TypoScript/config.tsc">
+<INCLUDE_TYPOSCRIPT: source="FILE: EXT:stundenplan/Resources/Public/TypoScript/extensions.tsc">

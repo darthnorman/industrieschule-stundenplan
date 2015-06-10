@@ -1,0 +1,23 @@
+page = PAGE
+page.typeNum = 0
+page.10 = FLUIDTEMPLATE 
+page.10 {
+	partialRootPath = EXT:stundenplan/Resources/Public/Templates/Partials/
+	layoutRootPath = EXT:stundenplan/Resources/Public/Templates/Layouts/
+	file.stdWrap.cObject = CASE
+	file.stdWrap.cObject {
+		key.data = levelfield:-1, backend_layout_next_level, slide
+		key.override.field = backend_layout
+		default = TEXT
+		default.value = EXT:stundenplan/Resources/Public/Templates/Default.html
+		2 = TEXT
+		2.value = EXT:stundenplan/Resources/Public/Templates/Start.html
+	}
+}
+
+page {
+	shortcutIcon = EXT:stundenplan/Resources/Public/img/favicon.ico
+	includeCSS {
+		style = EXT:stundenplan/Resources/Public/css/style.css
+	}
+}

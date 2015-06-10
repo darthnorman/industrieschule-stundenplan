@@ -1,0 +1,35 @@
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:tt_news/pi/static/ts_new/setup.txt">
+
+plugin.tt_news {
+	templateFile = EXT:stundenplan/Resources/Public/Templates/Extensions/ttnews/tt_news.html
+	pid_list = {$PID.storage.news}
+	singlePid = {$PID.single.news}
+	displayLatest {
+		subheader_stdWrap.crop >
+		subheader_stdWrap.outerWrap >
+		image {
+			file.maxW = 160
+			file.maxH = 160
+		}
+	}
+	displayList {
+		image {
+			file.maxW = 160
+			file.maxH = 160
+		}
+		subheader_stdWrap.append >
+		subheader_stdWrap.append = TEXT
+		subheader_stdWrap.append {
+			value = weiterlesen
+			wrap = <span class="morelink">|</span>
+		}
+	}
+	_LOCAL_LANG.de {
+		more = Weiterlesen
+	}
+	genericmarkers {
+		datetime = TEXT
+		datetime.field = datetime
+		datetime.strftime = %y-%m-%d %H:%M
+	}
+}

@@ -1,0 +1,149 @@
+lib.header = TEXT
+lib.header.value (
+	<h1 class="banner">
+		<a id="logo" role="banner" href="/">
+			<img src="typo3conf/ext/stundenplan/Resources/Public/img/logo_industrieschule_chemnitz_bsz_technik.jpg" alt="Logo der Industrieschule Chemnitz"/>
+		</a>
+	</h1>
+	<div class="contact">
+		<p>Industrieschule Chemnitz<br />Park der ODF 1<br />09111 Chemnitz</p>
+		<p>Telefon: +49 371 4882600<br />Fax: +49 371 488 2699</p>
+		<p>
+			<a href="mailto:bsz.c1@industrieschule.de">bsz.c1@industrieschule.de</a><br />
+			<a href="http://www.industrieschule.de">www.industrieschule.de</a></p>
+	</div>
+)
+
+lib.breakingnews = COA
+lib.breakingnews {
+	wrap = <nav class="nav-news"><ul class="slides">|</ul></nav>
+	10 =< plugin.tt_news
+	10 {
+		code = LATEST
+		limit = 1
+	}
+}
+
+lib.starttiles = HMENU
+lib.starttiles {
+	special = directory
+	special.value = {$PID.nav.main}
+	wrap = <div class="row">|</div>
+	1 = TMENU
+	1 {
+		noBlur = 1
+		expAll = 1
+		NO = 1
+		NO {
+			wrapItemAndSub = <div class="col-4 startblock">|</div>
+			stdWrap.innerWrap = <h2>|</h2>
+			stdWrap.wrap.cObject = FILES
+			stdWrap.wrap.cObject {
+				maxItems = 1
+				references {
+					current = 1
+					table = pages
+					fieldName = media
+					listNum = 0
+				}
+				renderObj = IMAGE
+				renderObj {
+					file.import.data = file:current:publicUrl
+					file.listNum = 0
+				}
+			}
+		}
+	}
+	2 = TMENU
+	2 {
+		noBlur = 1
+		expAll = 1
+		wrap = <ul>|</ul>
+		NO = 1
+		NO {
+			wrapItemAndSub = <li>|</li>
+		}
+	}
+}
+
+lib.content < styles.content.get
+lib.content.select.where = colPos = 0
+
+lib.nav.main = HMENU
+lib.nav.main {
+	special = directory
+	special.value = {$PID.nav.main}
+	wrap = <nav class="nav-main"><ul>|</ul></nav>
+	1 = TMENU
+	1 {	
+		noBlur = 1
+		NO = 1
+		NO.wrapItemAndSub = <li>|</li>
+		ACT < .NO
+		ACT.wrapItemAndSub = <li class="active">|</li>
+		CUR < .ACT
+	}
+}
+
+lib.nav.sub = HMENU
+lib.nav.sub {
+	special = directory
+	special.value = {$PID.nav.main}
+	entryLevel = 2
+	wrap = <div class="nav-sub"><ul>|</ul></div>
+	1 = TMENU
+	1 {	
+		noBlur = 1
+		NO = 1
+		NO.wrapItemAndSub = <li>|</li>
+		ACT < .NO
+		ACT.wrapItemAndSub = <li class="active">|</li>
+		CUR < .ACT
+	}
+}
+
+lib.sponsors = TEXT
+lib.sponsors.value (
+	<ul class="cetificates">
+		<li><img src="typo3conf/ext/stundenplan/Resources/Public/img/cisco.jpg" alt="Cisco Networking Academy" title="Cisco Networking Academy"/></li>
+		<li><img src="typo3conf/ext/stundenplan/Resources/Public/img/pearson.jpg" alt="Pearson" title="Pearson"/></li>
+		<li><img src="typo3conf/ext/stundenplan/Resources/Public/img/ecdl.jpg" alt="ECDL" title="ECDL"/></li>
+		<li><img src="typo3conf/ext/stundenplan/Resources/Public/img/eu.jpg" alt="EU" title="EU"/></li>
+		<li><img src="typo3conf/ext/stundenplan/Resources/Public/img/efre.jpg" alt="EFRE" title="EFRE"/></li>
+		<li><img src="typo3conf/ext/stundenplan/Resources/Public/img/certqua.jpg" alt="Certqua" title="Certqua"/></li>
+	</ul>
+)
+
+lib.copyright = COA
+lib.copyright {
+	wrap = <p class="copyright">|</p>
+	10 = TEXT
+	10 {
+		data = date:U
+		strftime =%Y
+		noTrimWrap= |&copy; | Industrieschule Chemnitz|
+	}
+	20 = TEXT
+	20 {
+		value = <img src="typo3conf/ext/stundenplan/Resources/Public/img/komsa_logo.png" alt="Komsa"/>
+		typolink.parameter = http://www.komsa.de _blank
+		typolink.ATagParams = title="Zur Webseite der Komsa"
+		noTrimWrap = |, gehostet von ||
+	}
+}
+
+lib.nav.footer = HMENU
+lib.nav.footer {
+	special = directory
+	special.value = {$PID.nav.footer}
+	wrap = <ul class="nav-footer">|</ul>
+	1 = TMENU
+	1 {	
+		noBlur = 1
+		NO = 1
+		NO.wrapItemAndSub = <li>|</li>
+		ACT < .NO
+		ACT.wrapItemAndSub = <li class="active">|</li>
+		CUR < .ACT
+	}
+}
