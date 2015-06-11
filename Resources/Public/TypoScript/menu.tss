@@ -16,7 +16,7 @@ lib.header.value (
 
 lib.breakingnews = COA
 lib.breakingnews {
-	wrap = <nav class="nav-news"><ul class="slides">|</ul></nav>
+	wrap = <nav class="nav-news clearfix"><ul class="slides">|</ul></nav>
 	10 =< plugin.tt_news
 	10 {
 		code = LATEST
@@ -90,16 +90,41 @@ lib.nav.sub {
 	special = directory
 	special.value = {$PID.nav.main}
 	entryLevel = 2
-	wrap = <div class="nav-sub"><ul>|</ul></div>
+	wrap = <div class="nav-sub">|</div>
 	1 = TMENU
 	1 {	
 		noBlur = 1
+		wrap = <ul>|</ul>
 		NO = 1
 		NO.wrapItemAndSub = <li>|</li>
+		NO {
+			stdWrap.wrap.cObject = FILES
+			stdWrap.wrap.cObject {
+				maxItems = 1
+				references {
+					current = 1
+					table = pages
+					fieldName = media
+					listNum = 0
+				}
+				renderObj = IMAGE
+				renderObj {
+					file {
+						import.data = file:current:publicUrl
+						listNum = 0
+						width = 298c
+						height = 40c
+					}
+				}
+			}
+		}
 		ACT < .NO
 		ACT.wrapItemAndSub = <li class="active">|</li>
 		CUR < .ACT
 	}
+	2 < .1
+	2.NO.stdWrap >
+	3 < .2
 }
 
 lib.sponsors = TEXT

@@ -8,21 +8,16 @@ plugin.tt_news {
 		subheader_stdWrap.crop >
 		subheader_stdWrap.outerWrap >
 		image {
-			file.maxW = 160
-			file.maxH = 160
+			file.maxW = 200c
+			file.maxH = 120c
 		}
 	}
 	displayList {
 		image {
-			file.maxW = 160
-			file.maxH = 160
+			file.maxW = 200c
+			file.maxH = 120c
 		}
 		subheader_stdWrap.append >
-		subheader_stdWrap.append = TEXT
-		subheader_stdWrap.append {
-			value = weiterlesen
-			wrap = <span class="morelink">|</span>
-		}
 	}
 	_LOCAL_LANG.de {
 		more = Weiterlesen
