@@ -1,26 +1,26 @@
 <?php
 
-class StundenplanModel {
+class Tx_Stundenplan_Domain_Model_StundenplanModel {
 
     protected $_table;
 
+    protected $_basePath = '/../fileadmin/user_upload/plaene/';
+
     public function get($block, $class) {
-        if ($block == null || $class == null) {
-            return false;
+        try {
+            $handle = fopen(PATH_typo3 . $this->_basePath . $block . '/' . $class . '.txt', 'r');
+            $content = array();
+
+            if ($handle) {
+                while (($line = fgets($handle))) {
+                    $content[] = explode("\t", $line);
+                }
+                fclose($handle);
+            }
+        } catch (\Exception $e) {
+            var_dump($e->getMessage());
         }
 
-        //suche die tabelle im filesystem
-        //content in $_table
-        //$this->_table = fread();
-
-        return $this->_parseTable();
-    }
-
-    protected function _parseTable() {
-        //paresen der haesslichen Tables
-        /**
-        array('stunde' => array('Unterricht Mo-Fr')
-         */
-        return array();
+        return $content;
     }
 }

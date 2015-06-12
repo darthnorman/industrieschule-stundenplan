@@ -6,7 +6,6 @@ jQuery(document).ready(function($) {
 		prevText: "vorheriges Element",
 		nextText: "nächstes Element"
 	});
-	
 	//Toggle Main Navigation (mobile only)
     $('body').on('click','.nav-toggle',function() {
         $('.nav-toggle').toggleClass('active');
@@ -19,5 +18,12 @@ jQuery(document).ready(function($) {
 		$('.nav-mobile .tab > ul').hide();
         $(this).parent('.tab').addClass('active');
 		$(this).next('ul').show();
+	});
+	//stundenplan
+    $('#block').change(function() {
+        $(this).parent().submit();
+    });
+    $('#classes').change(function() {
+        $(this).parent().submit();
     });
 });
