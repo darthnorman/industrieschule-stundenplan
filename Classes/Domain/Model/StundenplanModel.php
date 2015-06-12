@@ -8,20 +8,19 @@ class Tx_Stundenplan_Domain_Model_StundenplanModel {
 
     public function get($block, $class) {
         try {
-            $handle = fopen(PATH_typo3 . $this->_basePath . $block . '/' . $class, 'r');
+            $handle = fopen(PATH_typo3 . $this->_basePath . $block . '/' . $class . '.txt', 'r');
+            $content = array();
 
-
-            // file holen
-            // inhalt lesen
-            // inhalt parsen
-            return $this->_parseTable();
+            if ($handle) {
+                while (($line = fgets($handle))) {
+                    $content[] = explode("\t", $line);
+                }
+                fclose($handle);
+            }
         } catch (\Exception $e) {
             var_dump($e->getMessage());
-            die;
         }
-    }
 
-    protected function _parseTable() {
-        return array();
+        return $content;
     }
 }

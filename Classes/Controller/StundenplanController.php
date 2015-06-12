@@ -15,13 +15,15 @@ class Tx_Stundenplan_Controller_StundenplanController extends ActionController {
         if ($selectedBlock) {
             $selectedClass = t3lib_div::_GP('class');
             $this->view->assign('selectedClass', $selectedClass);
-        }
 
-        $blocks = array_slice(scandir(PATH_typo3 . $this->_basePath), 2);
-        $this->view->assign('blocks', $blocks);
-
-        if ($selectedBlock) {
             $classes = array_slice(scandir(PATH_typo3 . $this->_basePath . $selectedBlock), 2);
+
+            function shorten(&$value) {
+                $value = substr($value, 0, -4);
+            }
+
+            array_walk($classes, 'shorten');
+
             $this->view->assign('classes', $classes);
 
             if ($selectedClass) {
@@ -30,11 +32,13 @@ class Tx_Stundenplan_Controller_StundenplanController extends ActionController {
                 $this->view->assign('plan', $plan);
             }
         }
+        $blocks = array_slice(scandir(PATH_typo3 . $this->_basePath), 2);
+        $this->view->assign('blocks', $blocks);
+
     }
 }
 
 /*
- * Blocknamen mappen
  * Dateiendungen nicht anzeigen
  * Tabellen parsen
  */
