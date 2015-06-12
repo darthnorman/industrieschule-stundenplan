@@ -1,19 +1,3 @@
-lib.header = TEXT
-lib.header.value (
-	<h1 class="banner">
-		<a id="logo" role="banner" href="/">
-			<img src="typo3conf/ext/stundenplan/Resources/Public/img/logo_industrieschule_chemnitz_bsz_technik.jpg" alt="Logo der Industrieschule Chemnitz"/>
-		</a>
-	</h1>
-	<div class="contact">
-		<p>Industrieschule Chemnitz<br />Park der ODF 1<br />09111 Chemnitz</p>
-		<p>Telefon: +49 371 4882600<br />Fax: +49 371 488 2699</p>
-		<p>
-			<a href="mailto:bsz.c1@industrieschule.de">bsz.c1@industrieschule.de</a><br />
-			<a href="http://www.industrieschule.de">www.industrieschule.de</a></p>
-	</div>
-)
-
 lib.breakingnews = COA
 lib.breakingnews {
 	wrap = <nav class="nav-news clearfix"><ul class="slides">|</ul></nav>
@@ -73,9 +57,10 @@ lib.nav.main = HMENU
 lib.nav.main {
 	special = directory
 	special.value = {$PID.nav.main}
-	wrap = <nav class="nav-main"><ul>|</ul></nav>
+	wrap = <nav class="nav-main">|</nav>
 	1 = TMENU
 	1 {	
+		wrap = <ul>|</ul>
 		noBlur = 1
 		NO = 1
 		NO.wrapItemAndSub = <li>|</li>
@@ -98,24 +83,29 @@ lib.nav.sub {
 		NO = 1
 		NO.wrapItemAndSub = <li>|</li>
 		NO {
-			stdWrap.wrap.cObject = FILES
+			stdWrap.wrap.cObject = COA
 			stdWrap.wrap.cObject {
-				maxItems = 1
-				references {
-					current = 1
-					table = pages
-					fieldName = media
-					listNum = 0
-				}
-				renderObj = IMAGE
-				renderObj {
-					file {
-						import.data = file:current:publicUrl
+				10 = FILES
+				10 {
+					maxItems = 1
+					references {
+						current = 1
+						table = pages
+						fieldName = media
 						listNum = 0
-						width = 298c
-						height = 40c
+					}
+					renderObj = IMAGE
+					renderObj {
+						file {
+							import.data = file:current:publicUrl
+							listNum = 0
+							width = 298c
+							height = 40c
+						}
 					}
 				}
+				20 = TEXT
+				20.value = <i class="arrow"></i>
 			}
 		}
 		ACT < .NO
@@ -123,19 +113,23 @@ lib.nav.sub {
 		CUR < .ACT
 	}
 	2 < .1
-	2.NO.stdWrap >
+	2.NO.wrapItemAndSub = <li>|</li>
+	2.NO.stdWrap.wrap.cObject >
+	2.ACT.stdWrap.wrap.cObject >
+	2.CUR.stdWrap.wrap.cObject >
 	3 < .2
 }
 
 lib.sponsors = TEXT
 lib.sponsors.value (
-	<ul class="cetificates">
+	<ul class="certificates">
 		<li><img src="typo3conf/ext/stundenplan/Resources/Public/img/cisco.jpg" alt="Cisco Networking Academy" title="Cisco Networking Academy"/></li>
 		<li><img src="typo3conf/ext/stundenplan/Resources/Public/img/pearson.jpg" alt="Pearson" title="Pearson"/></li>
 		<li><img src="typo3conf/ext/stundenplan/Resources/Public/img/ecdl.jpg" alt="ECDL" title="ECDL"/></li>
 		<li><img src="typo3conf/ext/stundenplan/Resources/Public/img/eu.jpg" alt="EU" title="EU"/></li>
 		<li><img src="typo3conf/ext/stundenplan/Resources/Public/img/efre.jpg" alt="EFRE" title="EFRE"/></li>
 		<li><img src="typo3conf/ext/stundenplan/Resources/Public/img/certqua.jpg" alt="Certqua" title="Certqua"/></li>
+		<li><img src="typo3conf/ext/stundenplan/Resources/Public/img/foerderverein.jpg" alt="Förderverein" title="Förderverein"/></li>
 	</ul>
 )
 
@@ -170,5 +164,44 @@ lib.nav.footer {
 		ACT < .NO
 		ACT.wrapItemAndSub = <li class="active">|</li>
 		CUR < .ACT
+	}
+}
+
+lib.header = COA
+lib.header {
+	10 = TEXT
+	10 {
+		value = <img src="typo3conf/ext/stundenplan/Resources/Public/img/logo_industrieschule_chemnitz_bsz_technik.jpg" alt="Logo der Industrieschule Chemnitz"/>
+		wrap = <h1 class="banner"><a id="logo" role="banner" href="/">|</a></h1>
+	}
+	20 = TEXT
+	20 {
+		wrap = <div class="contact">|</div>
+		value (
+			<p>Industrieschule Chemnitz<br />Park der ODF 1<br />09111 Chemnitz</p>
+			<p>Telefon: +49 371 4882600<br />Fax: +49 371 488 2699</p>
+			<p>
+				<a href="mailto:bsz.c1@industrieschule.de">bsz.c1@industrieschule.de</a><br />
+				<a href="http://www.industrieschule.de">www.industrieschule.de</a>
+			</p>
+		)
+	}
+	25 = TEXT
+	25 {
+		wrap = <button type="button" class="nav-toggle visible-xs">|</button>
+		value (
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+		)
+	}
+	30 < lib.nav.main
+	30 {
+		wrap = <div class="nav-mobile visible-xs">|</div>
+		1.expAll = 1
+		2 < .1
+		2.expAll = 0
+		3 < .2
+		4 < .2
 	}
 }
