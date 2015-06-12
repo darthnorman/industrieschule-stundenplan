@@ -188,7 +188,7 @@ lib.header {
 	}
 	25 = TEXT
 	25 {
-		wrap = <button type="button" class="nav-toggle visible-xs">|</button>
+		wrap = <button type="button" class="nav-toggle visible-xs"><b>Menü</b>|</button>
 		value (
 			<span class="icon-bar"></span>
 			<span class="icon-bar"></span>
@@ -197,10 +197,16 @@ lib.header {
 	}
 	30 < lib.nav.main
 	30 {
-		wrap = <div class="nav-mobile visible-xs">|</div>
+		wrap = <div class="nav-mobile">|</div>
 		1.expAll = 1
+		1.NO.wrapItemAndSub = <li class="tab">|</li>
+		1.ACT.wrapItemAndSub = <li class="tab active">|</li>
+		1.CUR.wrapItemAndSub = <li class="tab active">|</li>
 		2 < .1
 		2.expAll = 0
+		2.NO.wrapItemAndSub = <li>|</li>
+		2.ACT.wrapItemAndSub = <li class="active">|</li>
+		2.CUR.wrapItemAndSub = <li class="active">|</li>
 		3 < .2
 		4 < .2
 	}

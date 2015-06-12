@@ -234,12 +234,19 @@ header .contact {
 	border: 1px solid;
 	border-radius: 4px;
 	color: rgba(255,255,255,0.5);
+	line-height: 22px;
 	padding: 2px 5px;
 	position: absolute;
 	right: 10px;
 	top: 10px;
 	z-index: 1001;
 }
+.nav-toggle b {
+	font-weight: normal;
+	float: right;
+	margin-left: 25px;
+}
+.nav-toggle.active,
 .nav-toggle:hover,
 .nav-toggle:focus {
 	color: #fff;
@@ -251,14 +258,19 @@ header .contact {
 	margin: 4px 0;
 	width: 20px;
 }
+.nav-toggle.active .icon-bar,
 .nav-toggle:hover .icon-bar,
 .nav-toggle:focus .icon-bar {
 	background-color: #fff;
 }
 .nav-mobile {
+	display: none;
 	clear: both;
 	margin: 10px 0;
 	overflow: hidden;
+}
+.nav-mobile.open {
+	display: block;
 }
 .nav-mobile ul {
 	list-style: none;
@@ -267,11 +279,19 @@ header .contact {
 }
 .nav-mobile a {
 	color: #fff;
+	display: block;
+	padding: 5px 0;
 	list-style: none;
+	text-align: center;
 	text-decoration: none;
+}
+.nav-mobile a:hover,
+.nav-mobile a:focus {
+	text-decoration: underline;
 }
 .nav-mobile > ul > li {
 	float: left;
+	position: relative;
 	width: 33.3333%;
 }
 .nav-mobile > ul > li:nth-child(even) {
@@ -283,6 +303,7 @@ header .contact {
 	color: rgba(255,255,255,0.5);
 	display: block;
 	font-size: 14px;
+	margin-bottom: 0;
 	padding: 2px 0;
 	text-align: center;
 }
@@ -290,9 +311,22 @@ header .contact {
 .nav-mobile > ul > li > a:hover,
 .nav-mobile > ul > li > a:focus {
 	color: #fff;
+	text-decoration: none;
 }
 .nav-mobile ul ul {
 	display: none;
+	left: 0;
+	padding-top: 10px;
+	position: relative;
+	right: 0;
+	top: 0;
+	width: 300%;
+}
+.nav-mobile ul .tab + .tab ul {
+	left: -100%
+}
+.nav-mobile ul .tab + .tab + .tab ul {
+	left: -200%
 }
 .nav-mobile ul .active ul {
 	display: block;
