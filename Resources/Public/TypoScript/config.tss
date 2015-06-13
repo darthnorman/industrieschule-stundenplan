@@ -4,6 +4,7 @@ config {
 	htmlTag_langKey = de
 	locale_all = de_DE
 	language = de
+	disablePrefixComment = 1
 	noScaleUp = 1
 	removeDefaultCss = 1
 	removePageCss = 1

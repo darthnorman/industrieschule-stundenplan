@@ -5,10 +5,9 @@ use Tx_Stundenplan_Domain_Model_StundenplanModel as Model;
 
 class Tx_Stundenplan_Controller_StundenplanController extends ActionController {
 
-    protected $_basePath = '/../fileadmin/user_upload/plaene/';
+    protected $_basePath = '/fileadmin/user_upload/plaene/';
 
     public function listAction() {
-
         $selectedBlock = t3lib_div::_GP('block');
         $this->view->assign('selectedBlock', $selectedBlock);
 
@@ -16,7 +15,7 @@ class Tx_Stundenplan_Controller_StundenplanController extends ActionController {
             $selectedClass = t3lib_div::_GP('class');
             $this->view->assign('selectedClass', $selectedClass);
 
-            $classes = array_slice(scandir(PATH_typo3 . $this->_basePath . $selectedBlock), 2);
+            $classes = array_slice(scandir(PATH_site . $this->_basePath . $selectedBlock), 2);
 
             function shorten(&$value) {
                 $value = substr($value, 0, -4);
@@ -32,7 +31,7 @@ class Tx_Stundenplan_Controller_StundenplanController extends ActionController {
                 $this->view->assign('plan', $plan);
             }
         }
-        $blocks = array_slice(scandir(PATH_typo3 . $this->_basePath), 2);
+        $blocks = array_slice(scandir(PATH_site . $this->_basePath), 2);
         $this->view->assign('blocks', $blocks);
 
     }

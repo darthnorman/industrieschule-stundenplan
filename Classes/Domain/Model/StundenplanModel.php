@@ -2,13 +2,11 @@
 
 class Tx_Stundenplan_Domain_Model_StundenplanModel {
 
-    protected $_table;
-
-    protected $_basePath = '/../fileadmin/user_upload/plaene/';
+    protected $_basePath = '/fileadmin/user_upload/plaene/';
 
     public function get($block, $class) {
         try {
-            $handle = fopen(PATH_typo3 . $this->_basePath . $block . '/' . $class . '.txt', 'r');
+            $handle = fopen(PATH_site . $this->_basePath . $block . '/' . $class . '.txt', 'r');
             $content = array();
 
             if ($handle) {

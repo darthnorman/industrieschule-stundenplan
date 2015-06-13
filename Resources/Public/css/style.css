@@ -156,7 +156,7 @@ table {
 	border-spacing: 0;
 }
 td,th {
-	padding: 0;
+	padding: 0 ;
 }
 /* =========== BEGIN EDITING HERE =========== */
 
@@ -207,6 +207,68 @@ img {
 	height: auto;
 	max-width: 100%;
 	vertical-align: top;
+}
+table {
+	text-align: center;
+	border: 1px solid #ccc;
+	width: 100%;
+}
+td,th {
+	border: 1px solid #ccc;
+	padding: 5px;
+}
+th {
+	background-color: #ddd;
+}
+tr:nth-child(even) {
+	background-color: #f1f1f1;
+}
+form ol {
+	list-style: none !important;
+	margin: 0;
+	padding: 0;
+}
+form li {
+	margin-bottom: 10px;
+}
+label {
+	display: block;
+	margin-bottom: 4px;
+}
+input[type="text"],
+input[type="password"],
+select,
+textarea {
+	border: 1px solid #ccc;
+	max-width: 100%;
+	width: 500px;
+}
+input[type="text"]:focus,
+input[type="password"]:focus,
+select:focus,
+textarea:focus {
+	border-color: #222;
+}
+input[type="submit"],
+button,
+.btn {
+	background-color: #15203E;
+	border: 0;
+	color: #fff;
+	padding: 5px 15px;
+}
+input[type="submit"]:hover,
+input[type="submit"]:focus,
+button:hover,
+button:focus,
+.btn:hover,
+.btn:focus {
+	background-color: #565E71;
+	text-shadow: 0 1px 1px rgba(0,0,0,0.5);
+}
+.csc-form-element-textblock {
+	color: #888;
+	font-size: smaller;
 }
 .container {
 	max-width: 1280px;
@@ -382,12 +444,18 @@ header .contact {
 	z-index: -1;
 }
 .nav-sub > ul > li > a {
-	background-color: rgba(21,32,62,0.85);
+	background-color: rgba(21,32,62,0.65);
 	border-top: 1px solid #565E71;
 	color: #fff;
 	font-size: 16px;
 	padding: 10px;
 	position: relative;
+	text-shadow: 0 1px 1px rgba(0,0,0,0.5);
+}
+.nav-sub > ul > li.active > a,
+.nav-sub > ul > li > a:hover,
+.nav-sub > ul > li > a:focus {
+	background-color: rgba(21,32,62,0.85);
 }
 .nav-sub > ul > li:first-child a {
 	border-top: 0;
@@ -404,6 +472,14 @@ header .contact {
 	left: 12px;
 	position: absolute;
 	top: 6px;
+}
+.nav-sub ul ul .active > a {
+	background-color: #F1F1F1;
+	margin-left: -18px;
+	padding-left: 28px;
+}
+.nav-sub ul ul ul .active > a {
+	background-color: transparent;
 }
 .nav-sub .arrow {
 	background: url(../img/arrow_menu.png) no-repeat left -46px;
