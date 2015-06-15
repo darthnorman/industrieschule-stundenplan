@@ -600,15 +600,18 @@ header .contact {
 .timetable tr:nth-child(6n+4) td,
 .timetable tr:nth-child(6n+1) td {
 	border-bottom: 0;
+	padding-bottom: 0;
 }
 .timetable tr:nth-child(6n+5) td,
 .timetable tr:nth-child(6n+2) td {
 	border-bottom: 0;
 	border-top: 0;
+	padding: 0 5px;
 }
 .timetable tr:nth-child(6n+6) td,
 .timetable tr:nth-child(6n+3) td {
 	border-top: 0;
+	padding-top: 0;
 }
 
 /* Footer */
