@@ -7,4 +7,6 @@ lib.stdheader {
 
 tt_content.stdWrap.dataWrap =
 
+tt_content.table.20.stdWrap.outerWrap = <div class="table-container">|</div>
+
 lib.parseFunc_RTE.nonTypoTagStdWrap.encapsLines.addAttributes.P.class >

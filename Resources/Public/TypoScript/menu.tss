@@ -4,7 +4,7 @@ lib.breakingnews {
 	10 =< plugin.tt_news
 	10 {
 		code = LATEST
-		limit = 1
+		limit = 8
 	}
 }
 

@@ -1,62 +1,67 @@
 <f:if condition="{blocks}">
     <f:then>
-        <f:form method="POST" action="list">
-
-            <label for="block">Block:</label>
-            <select name="block" id="block">
-                <option value="">------</option>
-                <f:for each="{blocks}" as="block">
-                    <f:if condition="{selectedBlock} == {block}">
-                        <f:then>
-                            <option value="{block}" selected>{block}</option>
-                        </f:then>
-                        <f:else>
-                            <option value="{block}">{block}</option>
-                        </f:else>
-                    </f:if>
-                </f:for>
-            </select>
+        <f:form method="POST" action="list" class="row" id="form-timetable">
+			<fieldset class="col-4">
+				<label for="block">Block:</label>
+				<select name="block" id="block">
+					<option value="">bitte wählen</option>
+					<f:for each="{blocks}" as="block">
+						<f:if condition="{selectedBlock} == {block}">
+							<f:then>
+								<option value="{block}" selected>{block}</option>
+							</f:then>
+							<f:else>
+								<option value="{block}">{block}</option>
+							</f:else>
+						</f:if>
+					</f:for>
+				</select>
+			</fieldset>
 
             <f:if condition="{classes}">
-                <label for="classes">Klasse:</label>
-                <select name="class" id="classes">
-                    <option value="">------</option>
-                    <f:for each="{classes}" as="class">
-                        <f:if condition="{selectedClass} == {class}">
-                            <f:then>
-                                <option value="{class}" selected>{class}</option>
-                            </f:then>
-                            <f:else>
-                                <option value="{class}">{class}</option>
-                            </f:else>
-                        </f:if>
-                    </f:for>
-                </select>
+				<fieldset class="col-4">
+					<label for="classes">Klasse:</label>
+					<select name="class" id="classes">
+						<option value="">bitte wählen</option>
+						<f:for each="{classes}" as="class">
+							<f:if condition="{selectedClass} == {class}">
+								<f:then>
+									<option value="{class}" selected>{class}</option>
+								</f:then>
+								<f:else>
+									<option value="{class}">{class}</option>
+								</f:else>
+							</f:if>
+						</f:for>
+					</select>
+				</fieldset>
             </f:if>
         </f:form>
 
         <f:if condition="{plan}">
-            <table class="timetable">
-                <thead>
-                    <tr>
-                        <th>Zeit</th>
-                        <th>Montag</th>
-                        <th>Dienstag</th>
-                        <th>Mittwoch</th>
-                        <th>Donnerstag</th>
-                        <th>Freitag</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <f:for each="{plan}" as="line">
-                        <tr>
-                            <f:for each="{line}" as="cell">
-                                <td>{cell}</td>
-                            </f:for>
-                        </tr>
-                    </f:for>
-                </tbody>
-            </table>
+			<div class="table-container">
+				<table class="timetable">
+					<thead>
+						<tr>
+							<th>Zeit</th>
+							<th>Montag</th>
+							<th>Dienstag</th>
+							<th>Mittwoch</th>
+							<th>Donnerstag</th>
+							<th>Freitag</th>
+						</tr>
+					</thead>
+					<tbody>
+						<f:for each="{plan}" as="line">
+							<tr>
+								<f:for each="{line}" as="cell">
+									<td>{cell}</td>
+								</f:for>
+							</tr>
+						</f:for>
+					</tbody>
+				</table>
+			</div>
         </f:if>
     </f:then>
     <f:else>

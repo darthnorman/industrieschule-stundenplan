@@ -2,7 +2,6 @@ jQuery.noConflict();
 jQuery(document).ready(function($) {
 	
 	$('.nav-news').flexslider({
-		controlNav: false,
 		prevText: "vorheriges Element",
 		nextText: "nächstes Element"
 	});
@@ -21,9 +20,9 @@ jQuery(document).ready(function($) {
 	});
 	//stundenplan
     $('#block').change(function() {
-        $(this).parent().submit();
+        $('#form-timetable').submit();
     });
     $('#classes').change(function() {
-        $(this).parent().submit();
+        $('#form-timetable').submit();
     });
 });

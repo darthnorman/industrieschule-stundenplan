@@ -8,14 +8,14 @@ plugin.tt_news {
 		subheader_stdWrap.crop >
 		subheader_stdWrap.outerWrap >
 		image {
-			file.maxW = 200c
-			file.maxH = 120c
+			file.maxW = 400c
+			file.maxH = 240c
 		}
 	}
 	displayList {
 		image {
-			file.maxW = 200c
-			file.maxH = 120c
+			file.maxW = 400c
+			file.maxH = 240c
 		}
 		subheader_stdWrap.append >
 	}
