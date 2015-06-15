@@ -7,13 +7,13 @@ class Tx_Stundenplan_Controller_StundenplanController extends ActionController {
 
     protected $_basePath = '/fileadmin/user_upload/plaene/';
 
+
+
     public function listAction() {
         $selectedBlock = t3lib_div::_GP('block');
         $this->view->assign('selectedBlock', $selectedBlock);
 
         if ($selectedBlock) {
-            $selectedClass = t3lib_div::_GP('class');
-            $this->view->assign('selectedClass', $selectedClass);
 
             $classes = array_slice(scandir(PATH_site . $this->_basePath . $selectedBlock), 2);
 
@@ -24,13 +24,18 @@ class Tx_Stundenplan_Controller_StundenplanController extends ActionController {
             array_walk($classes, 'shorten');
 
             $this->view->assign('classes', $classes);
-
-            if ($selectedClass) {
-                $model = new Model();
-                $plan = $model->get($selectedBlock, $selectedClass);
-                $this->view->assign('plan', $plan);
-            }
         }
+
+        $selectedClass = t3lib_div::_GP('class');
+        $this->view->assign('selectedClass', $selectedClass);
+
+        if ($selectedClass) {
+            $model = new Model();
+            $plan = $model->getTable($selectedBlock, $selectedClass);
+            $this->view->assign('plan', $plan);
+            $this->view->assign('time', $this->_times);
+        }
+
         $blocks = array_slice(scandir(PATH_site . $this->_basePath), 2);
         $this->view->assign('blocks', $blocks);
 
@@ -38,6 +43,5 @@ class Tx_Stundenplan_Controller_StundenplanController extends ActionController {
 }
 
 /*
- * Dateiendungen nicht anzeigen
- * Tabellen parsen
+ * auf dem server deployen
  */
