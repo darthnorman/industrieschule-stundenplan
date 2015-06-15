@@ -47,8 +47,12 @@ class Tx_Stundenplan_Domain_Model_StundenplanModel {
             if ($handle) {
                 while (($line = fgets($handle))) {
                     $line = explode("\t", $line);
-                    array_unshift($line, $this->_times[$i]);
-                    $content[] = array_slice($line, 0, 6);
+                    $row = array();
+                    foreach ($line as $cell) {
+                        $row[] = utf8_encode($cell);
+                    }
+                    array_unshift($row, $this->_times[$i]);
+                    $content[] = array_slice($row, 0, 6);
                     $i++;
                 }
                 fclose($handle);
