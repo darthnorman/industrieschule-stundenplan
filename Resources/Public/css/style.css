@@ -410,7 +410,7 @@ header .contact {
 	color: #666;
 	display: block;
 	overflow: hidden;
-	padding: 20px;
+	padding: 20px 40px;
 	text-decoration: none;
 }
 
@@ -600,17 +600,20 @@ header .contact {
 .timetable tr:nth-child(6n+4) td,
 .timetable tr:nth-child(6n+1) td {
 	border-bottom: 0;
+	font-size: smaller;
 	padding-bottom: 0;
 }
 .timetable tr:nth-child(6n+5) td,
 .timetable tr:nth-child(6n+2) td {
 	border-bottom: 0;
 	border-top: 0;
+	font-weight: bold;
 	padding: 0 5px;
 }
 .timetable tr:nth-child(6n+6) td,
 .timetable tr:nth-child(6n+3) td {
 	border-top: 0;
+	font-size: smaller;
 	padding-top: 0;
 }
 
@@ -742,29 +745,31 @@ html[xmlns] .flexslider .slides {
 	margin-right: 5px;
 }
 .flex-direction-nav a {
-	background: rgba(21, 32, 62, 0.65);
-	text-decoration: none;
-	display: block;
-	width: 40px;
-	height: 40px;
-	margin: -20px 0 0;
-	position: absolute;
-	top: 50%;
-	z-index: 10;
-	overflow: hidden;
+	background: transparent url(../img/arrow_slider_left.png) no-repeat 0 0;
 	cursor: pointer;
-	color: rgba(0, 0, 0, 0.8);
+	display: block;
+	height: 50px;
+	margin: -20px 0 0;
+	opacity: 0.8;
+	overflow: hidden;
+	padding: 0 0 10px;
+	position: absolute;
+	text-decoration: none;
 	text-indent: -9999px;
+	top: 50%;
+	width: 40px;
+	z-index: 10;
 }
 .flex-direction-nav .flex-prev {
-	left: -30px;
+	left: -20px;
 }
 .flex-direction-nav .flex-next {
-	right: -30px;
+	background-image: url(../img/arrow_slider_right.png);
+	right: -20px;
 }
 .flex-direction-nav a:hover,
 .flex-direction-nav a:focus {
-	background: rgba(21, 32, 62, 0.85);
+	opacity: 1;
 }
 .flex-direction-nav .flex-disabled {
 	opacity: 0 !important;
@@ -862,7 +867,7 @@ html[xmlns] .flexslider .slides {
 
 /* Media 1000px+ */
 @media (min-width: 1000px) {
-
+	
 }
 
 /* Media 1120px+ */
