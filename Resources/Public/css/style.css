@@ -589,6 +589,27 @@ header .contact {
 	margin-bottom: 20px;
 	overflow: hidden;
 }
+.timetable tr:nth-child(even) {
+	background-color: transparent;
+}
+.timetable tr:nth-child(6n+4),
+.timetable tr:nth-child(6n+5),
+.timetable tr:nth-child(6n+6) {
+	background-color: #f1f1f1;
+}
+.timetable tr:nth-child(6n+4) td,
+.timetable tr:nth-child(6n+1) td {
+	border-bottom: 0;
+}
+.timetable tr:nth-child(6n+5) td,
+.timetable tr:nth-child(6n+2) td {
+	border-bottom: 0;
+	border-top: 0;
+}
+.timetable tr:nth-child(6n+6) td,
+.timetable tr:nth-child(6n+3) td {
+	border-top: 0;
+}
 
 /* Footer */
 footer {
