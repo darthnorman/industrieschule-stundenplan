@@ -19,6 +19,28 @@ plugin.tt_news {
 		}
 		subheader_stdWrap.append >
 	}
+	displaySingle {
+		subheader_stdWrap.wrap = <p class="bold">|</p>
+		image {
+			file {
+				width = 200c
+				height = 200c
+				maxW >
+				maxH >
+			}
+			imageLinkWrap {
+				JSwindow = 0
+				directImageLink = 1
+				linkParams.ATagParams { 
+					dataWrap = target="_blank" class="lightbox" rel="lightbox{field:uid}"
+				}
+				height =
+				width =
+			}
+		}
+		caption_stdWrap.dataWrap = <p class="caption">|</p>
+		caption_stdWrap.required = 1
+	}
 	_LOCAL_LANG.de {
 		more = Weiterlesen
 	}

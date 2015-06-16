@@ -6,7 +6,15 @@ lib.stdheader {
 }
 
 tt_content.stdWrap.dataWrap =
-
+tt_content.image.20.1.imageLinkWrap {
+	JSwindow = 0
+	directImageLink = 1
+	linkParams.ATagParams { 
+		dataWrap = target="_blank" class="lightbox" rel="lightbox{field:uid}"
+	}
+	height =
+	width =
+}
 tt_content.table.20.stdWrap.outerWrap = <div class="table-container">|</div>
 
 lib.parseFunc_RTE.nonTypoTagStdWrap.encapsLines.addAttributes.P.class >

@@ -344,41 +344,24 @@ LINK_NEXT - used in the pagebrowser
 	This subpart is used to display single news items
 -->
 <div class="news-single-item">
-###NEWS_CATEGORY_ROOTLINE###
-###NEXT_ARTICLE###
-###PREV_ARTICLE###
-	<div class="news-single-rightbox">
-		###NEWS_DATE### ###NEWS_TIME### ###TEXT_NEWS_AGE### ###NEWS_AGE###
-		###CATWRAP_B### ###TEXT_CAT### ###NEWS_CATEGORY### ###NEWS_CATEGORY_IMAGE### ###CATWRAP_E###
-		###NEWS_AUTHOR###
-	</div>
-		<h1>###NEWS_TITLE###</h1>
-		###NEWS_SUBHEADER###
-		<hr class="cl-right" />
+	<h1>###NEWS_TITLE###</h1>
+	<p><time datetime="###GENERIC_DATETIME###">###NEWS_DATE###</time></p>
+	###NEWS_SUBHEADER###
+	###NEWS_CONTENT###
+	###NEWS_IMAGE###
 
-		###NEWS_IMAGE###
-		###NEWS_CONTENT###
-		<hr class="cl-right" />
-			###ADDINFO_WRAP_B###
-
-				  	###TEXT_RELATED###
-				 	###NEWS_RELATED###
-
-					###TEXT_FILES###
-				 	###FILE_LINK###
-
-					###TEXT_LINKS###
-					###NEWS_LINKS###
-
-					###TEXT_RELATEDBYCATEGORY###
-					###NEWS_RELATEDBYCATEGORY###
-
-			###ADDINFO_WRAP_E###
-			
-			###NEWS_SINGLE_PAGEBROWSER###
-	<div class="news-single-backlink">
-	<!--###LINK_ITEM###-->###BACK_TO_LIST###<!--###LINK_ITEM###-->
-	</div>
+	###ADDINFO_WRAP_B###
+	  	###TEXT_RELATED###
+	 	###NEWS_RELATED###
+		###TEXT_FILES###
+	 	###FILE_LINK###
+		###TEXT_LINKS###
+		###NEWS_LINKS###
+		###TEXT_RELATEDBYCATEGORY###
+		###NEWS_RELATEDBYCATEGORY###
+	###ADDINFO_WRAP_E###
+		
+	###NEWS_SINGLE_PAGEBROWSER###
 </div>
 <!-- ###TEMPLATE_SINGLE### end -->
 
