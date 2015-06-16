@@ -1,0 +1,9 @@
+Soll-/Ist-Vergleich
+--------------------------
+
+Die Tabelle XX stellt die ursprünglich geplanten Zeiten den tatsächlich angefallenen Stunden gegenüber. Die hierbei enstandene Differenz resultiert aus dem Fehlen eines Gruppenmitgliedes, da die im Netzplan veranschlagten Zeiten so nicht im vollen Maße für die Aufgaben genutzt werden konnten. Rückblickend betrachtet wurden die Vorgänge jedoch zeitgemäß umgesetzt.
+
+Variance analysis
+--------------------------
+
+Table XX compares the originally planned and actual accrued hours. The resulting difference occured because of the absence of one group member. As a consequence claimed hours could not be fully used for the tasks. In retrospect, however, the processes were implemented timely.    

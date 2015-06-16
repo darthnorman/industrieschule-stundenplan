@@ -1,4 +1,12 @@
-domain = industrieschule.localhost
+domain = www.industrieschule.de
+
+[globalString = IENV:HTTP_HOST=neu.industrieschule.de]
+	domain = neu.industrieschule.de
+[end]
+
+[globalString = IENV:HTTP_HOST=*.localhost]
+	domain = industrieschule.localhost
+[end]
 
 PID {
 	nav {

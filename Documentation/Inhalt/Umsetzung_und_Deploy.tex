@@ -1,4 +1,32 @@
 % !TEX root = ../Projektdokumentation.tex
-\section{Umsetzung und Deploy} 
-\label{sec:Umsetzung und Deploy}
+\section{Umsetzung und Deployment} 
+\label{sec:Umsetzung und Deployment}
 
+\subsection{Entwicklung Stundenplan}
+\label{sec:Entwicklung Stundenplan}
+Die Schulstundenpl\"ane wurden bisher durch ein Programm erstellt, welches 
+Dateien im txt-Format generiert. Diese \acs{ANSI}-kodierten Dateien enthalten, 
+durch Tabulatoren getrennt, die Auflistung der R\"aume, F\"acher und Lehrer.
+Da dieses Programm weiter durch den Auftraggeber genutzt werden soll, war 
+es notwendig eine Konvertierung der Rohdaten in \acs{HTML} vorzunehmen.\\
+Durch die M\"oglichkeit diese Dateien im Backend des \acs{CMS} hochzuladen, wurde eine 
+Ordnerstruktur eingef\"uhrt, die diese Dateien nach Bl\"ocken trennt. 
+Zus\"atzlich vereinfacht diese Struktur die Darstellung der Bl\"ocke und Klassen. Die Programmierung 
+des Plugins zur Darstellung der Stundenpl\"ane begann mit dem Auslesen der Verzeichnisse, um einen 
+\"uberblick \"uber alle verf\"ugbaren Dateien zu gewinnen und eine Auswahl f\"ur den Nutzer zur Verf\"ugung 
+zu stellen. Nachdem der Nutzer den gew\"unschten Plan ausw\"ahlt, wird die entsprechende Datei 
+ausgelesen, \acs{geparst}, in eine \acs{Array}struktur gebracht, um anschlie\ss{}end in Tabellenform angezeigt 
+zu werden. Die Anzeige erfolgt \"uber Fluid, eine Extension von TYPO3 um die Gestaltung von Templates 
+zu vereinfachen und um logische Operationen zu erweitern.
+
+\subsection{Deployment}
+\label{sec:Deployment}
+Neben Ersteinrichtung des Servers und Installation von ben\"otigten \acs{Extension}s wurde ein 
+\acs{Datenbankdump} mittels phpMyAdmin eingespielt. Um die Stundenplan-\acs{Extension} einzubinden,
+musste diese zun\"achst \acs{getaggt} werden, bevor sie im Anschluss aufgespielt wurde.
+
+\subsection{Redakteuersdokumentation}
+\label{sec:Redakteuersdokumentation}
+Um den Redakteuren, welche die Seite weiter betreuen, die Arbeit mit dem \acs{CMS} zu erleichtern, 
+wurde eine technische Dokumentation angefertigt. Diese stellt einen Leitfaden zur Handhabung des 
+\acs{Back-End}s zur Verf\"ugung und gew\"ahleistet ein st\"orungsfreies Verwalten neuer und alter Inhalte.
