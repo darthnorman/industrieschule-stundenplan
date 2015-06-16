@@ -37,11 +37,17 @@ class Tx_Stundenplan_Domain_Model_StundenplanModel {
 
     protected $_basePath = '/fileadmin/user_upload/plaene/';
 
+    /**
+     * liefert für die angegebene Kombination aus Klasse und Block den Stundenplan in einem Array
+     *
+     * @param string $block
+     * @param string $class
+     * @return array
+     */
     public function getTable($block, $class) {
         try {
             $handle = fopen(PATH_site . $this->_basePath . $block . '/' . $class . '.txt', 'r');
             $content = array();
-
             $i = 0;
 
             if ($handle) {
@@ -58,7 +64,7 @@ class Tx_Stundenplan_Domain_Model_StundenplanModel {
                 fclose($handle);
             }
         } catch (\Exception $e) {
-            var_dump($e->getMessage());
+            echo $e->getMessage();
         }
 
         return $content;
