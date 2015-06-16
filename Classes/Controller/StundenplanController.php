@@ -7,8 +7,9 @@ class Tx_Stundenplan_Controller_StundenplanController extends ActionController {
 
     protected $_basePath = '/fileadmin/user_upload/plaene/';
 
-
-
+    /**
+     * Funktion zur Entgegennahme eventueller Post Paramter und Ausgabe der verfügbaren Blöcke und deren Klassen
+     */
     public function listAction() {
         $selectedBlock = t3lib_div::_GP('block');
         $this->view->assign('selectedBlock', $selectedBlock);
@@ -41,7 +42,3 @@ class Tx_Stundenplan_Controller_StundenplanController extends ActionController {
 
     }
 }
-
-/*
- * auf dem server deployen
- */
