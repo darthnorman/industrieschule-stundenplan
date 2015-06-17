@@ -6,4 +6,4 @@ Die Tabelle XX stellt die ursprünglich geplanten Zeiten den tatsächlich angefall
 Variance analysis
 --------------------------
 
-Table XX compares the originally planned and actual accrued hours. The resulting difference occured because of the absence of one group member. As a consequence claimed hours could not be fully used for the tasks. In retrospect, however, the processes were implemented timely.    
+Table XX compares the originally planned and actual accrued hours. The resulting difference occurred because of the absence of one group member. As a consequence claimed hours could not be fully used for the tasks. In retrospect, however, the processes were implemented timely.    

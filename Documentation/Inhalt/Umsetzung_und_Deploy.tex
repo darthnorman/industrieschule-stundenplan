@@ -2,6 +2,38 @@
 \section{Umsetzung und Deployment} 
 \label{sec:Umsetzung und Deployment}
 
+\subsection{Skizzen und Screen-Design}
+\label{sec:Skizzen und Screen-Design}
+Jede Idee hat ihren Anfang auf einem Stück Papier. Wireframes sind unabdingbar, sie stellen die wichtigsten Funktionen einer 
+Seite dar und dienen als Vorlage für das spätere Screen-Design. In Photoshop wurden daraufhin in mehreren Iterationen Screen-Designs
+erstellt. Der finale Entwurf bildet dann die Basis für einen Prototyp.
+\todo{Verweis auf Entwürfe?}
+
+\subsection{Prototyping mit HTML und CSS}
+\label{sec:Prototyping mit HTML und CSS}
+Bevor das Design in TYPO3 integriert werden kann, ist es wichtig einen statischen Prototypen in HTML und CSS zu schreiben. 
+In diesem Klickdummy können Fehler im Design rasch gefunden und entsprechende Lösungen entwickelt werden. Im Browser kann 
+man zudem schnell improvisieren, sodass Probleme bei der User Experience - besonders im mobilen Bereich - oder der 
+Barrierefreiheit schneller gelöst werden können als das in einem grafischen Entwurf der Fall ist. Sobald der Prototyp final ist,
+kann damit begonnen werden, ihn mit dynamischen Inhalten zu befüllen.
+
+\subsection{Lokale Umgebung einrichten}
+\label{sec:Lokale Umgebung einrichten}
+Damit keiner auf der Live-Umgebung direkt arbeitet, ist es notwendig eine geeignete Entwicklungsumgebung lokal zu errichten.
+Darauf kann jeder Entwickler seine Arbeit unabhängig von anderen Entwicklern durchführen. Mit XAMPP wurde bei jedem eine lokale 
+TYPO3-Installation aufgesetzt, auf der gearbeitet werden konnte. XAMMP richtet einen lokalen Apache-Server mit MySQL-Anbindung 
+und einer aktuellen PHP-Version ein. Darauf kann dann eine TYPO3-Umgebung aufgesetzt werden.
+
+\subsection{TYPO3 Integration}
+\label{sec:TYPO3 Integration}
+Eine nackte TYPO3-Installation und ein Prototyp allein bilden noch keine Webseite. Deswegen ist es notwendig, den erstellten 
+Prototyp, der das Basistemplate der neue Website darstellt, mit dynamischen Inhalten zu befüllen. In TYPO3 wird dies durch 
+TypoScript und der Template-Engine Fluid erreicht. Der Prototyp wird dabei in ein Fluid-Template überführt, in dem sogenannte 
+Marker mit Inhalten ersetzt werden. Solche Inhalte sind z. B. Menüs, im Back-End angelegte Inhaltselemente, Header- und 
+Footer-Bereiche der Seite.\\
+Zur Integration gehört auch das Installieren von Extensions und die Einbindung deren Konfigurationsdateien. So wird 
+beispielsweise die Extension realURL dazu benutzt, die URLs in ein für Menschen lesbares Format zu bringen.
+
 \subsection{Entwicklung Stundenplan}
 \label{sec:Entwicklung Stundenplan}
 Die Schulstundenpl\"ane wurden bisher durch ein Programm erstellt, welches 
@@ -19,14 +51,31 @@ ausgelesen, \acs{geparst}, in eine \acs{Array}struktur gebracht, um anschlie\ss{
 zu werden. Die Anzeige erfolgt \"uber Fluid, eine Extension von TYPO3 um die Gestaltung von Templates 
 zu vereinfachen und um logische Operationen zu erweitern.
 
+\subsection{Entwicklungen unter Versionskontrolle stellen}
+\label{sec:Entwicklungen unter Versionskontrolle stellen}
+Um eine einheitliche Versionierung und einen kontrollierten Entwicklungsprozess sicherstellen zu können, wurde die Extension
+Stundenplan unter Versionskontrolle durch Git gestellt. Dadurch können parallele Arbeiten schnell und sicher zusammengeführt 
+und bei Problemen die Änderungshistorie durchsucht und ggf. alte Stände zurückgeholt werden. Git stellt alle Dateien in einem 
+Repository zusammen. Darunter befinden sich neben dem Quellcode zur Darstellung der Stundenpläne auch das Fluid-Template sowie 
+alle Bilder, CSS-, und JavaScript-Dateien.\\
+Entwickler können ihre Änderungen, die sie lokal gemacht haben, an diesen zentralen Ort senden und durch einen Merge werden 
+die Änderungen mit der bisherigen Version zu einer neuen Version verschmolzen. Das Repository befindet ist derzeit unter Github 
+(https://github.com/darthnorman/industrieschule-stundenplan), ist öffentlich zugänglich und kann von jedem heruntergeladen 
+und geforkt werden.
+
 \subsection{Deployment}
 \label{sec:Deployment}
 Neben Ersteinrichtung des Servers und Installation von ben\"otigten \acs{Extension}s wurde ein 
 \acs{Datenbankdump} mittels phpMyAdmin eingespielt. Um die Stundenplan-\acs{Extension} einzubinden,
 musste diese zun\"achst \acs{getaggt} werden, bevor sie im Anschluss aufgespielt wurde.
 
+\todo{Testing?}
+
 \subsection{Redakteuersdokumentation}
 \label{sec:Redakteuersdokumentation}
 Um den Redakteuren, welche die Seite weiter betreuen, die Arbeit mit dem \acs{CMS} zu erleichtern, 
-wurde eine technische Dokumentation angefertigt. Diese stellt einen Leitfaden zur Handhabung des 
-\acs{Back-End}s zur Verf\"ugung und gew\"ahleistet ein st\"orungsfreies Verwalten neuer und alter Inhalte.
+wurde eine Redakteuersdokumentation angefertigt. Diese umfasst neben den grundlegenden Kenntnissen im Umgang mit TYPO3 
+einen Leitfaden zur Handhabung des \acs{Back-End}s das Erstellen von Seiten und Inhalten wie Bilder, Texte, Neuigkeiten 
+und Stundenpläne. Weiterhin wird die Rechte- und Rollenverteilung des Portals offen gelegt und auf sonstige Eigenheiten 
+des Portals eingegangen.
+\todo{Doku in den Anhang}
