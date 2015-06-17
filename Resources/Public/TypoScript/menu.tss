@@ -121,7 +121,8 @@ lib.nav.sub {
 }
 
 lib.sponsors = TEXT
-lib.sponsors.value (
+lib.sponsors {
+	value (
 	<ul class="certificates">
 		<li><img src="typo3conf/ext/stundenplan/Resources/Public/img/cisco.jpg" alt="Cisco Networking Academy" title="Cisco Networking Academy"/></li>
 		<li><img src="typo3conf/ext/stundenplan/Resources/Public/img/pearson.jpg" alt="Pearson" title="Pearson"/></li>
@@ -131,7 +132,9 @@ lib.sponsors.value (
 		<li><img src="typo3conf/ext/stundenplan/Resources/Public/img/certqua.jpg" alt="Certqua" title="Certqua"/></li>
 		<li><img src="typo3conf/ext/stundenplan/Resources/Public/img/foerderverein.jpg" alt="Förderverein" title="Förderverein"/></li>
 	</ul>
-)
+	)
+	typolink.parameter = zusatzqualifizierung
+}
 
 lib.copyright = COA
 lib.copyright {

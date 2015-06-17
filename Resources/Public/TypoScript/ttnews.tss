@@ -5,7 +5,7 @@ plugin.tt_news {
 	pid_list = {$PID.storage.news}
 	singlePid = {$PID.single.news}
 	displayLatest {
-		subheader_stdWrap.crop >
+		subheader_stdWrap.crop = 200|...|1
 		subheader_stdWrap.outerWrap >
 		image {
 			file.maxW = 400c
@@ -23,10 +23,8 @@ plugin.tt_news {
 		subheader_stdWrap.wrap = <p class="bold">|</p>
 		image {
 			file {
-				width = 200c
-				height = 200c
-				maxW >
-				maxH >
+				maxW = 400
+				maxH = 200
 			}
 			imageLinkWrap {
 				JSwindow = 0

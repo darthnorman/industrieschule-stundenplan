@@ -4,7 +4,8 @@ lib.stdheader {
 	2.headerStyle >
 	3.headerClass >
 }
-
+tt_content.stdWrap.prepend >
+tt_content.stdWrap.innerWrap.cObject.66.10.value >
 tt_content.stdWrap.dataWrap =
 tt_content.image.20.1.imageLinkWrap {
 	JSwindow = 0
@@ -15,6 +16,60 @@ tt_content.image.20.1.imageLinkWrap {
 	height =
 	width =
 }
+
+# *****************
+# CType: image
+# *****************
+tt_content.image.20 {
+	imageStdWrap.dataWrap >
+	imageColumnStdWrap.dataWrap >
+	imageStdWrapNoWidth.wrap >
+	addClassesCol >
+	addClassesImage >
+	layout.default.value = <div class="intext-left">###IMAGES###</div>###TEXT### 
+	layout.1.value = <div class="above-right">###IMAGES###</div>###TEXT###
+	layout.2.value = <div class="above-left">###IMAGES###</div>###TEXT###
+	layout.8.value = ###TEXT###<div class="below-center">###IMAGES###</div>
+	layout.9.value = ###TEXT###<div class="below-right">###IMAGES###</div>
+	layout.10.value = ###TEXT###<div class="below-left">###IMAGES###</div>
+	layout.17.value = <div class="intext-right">###IMAGES###</div>###TEXT###
+	layout.18.value = <div class="intext-left">###IMAGES###</div>###TEXT###
+	layout.25.value = <div class="row imagesplit"><div class="col-sm-16">###TEXT###</div><div class="col-sm-8 intext-right-nowrap">###IMAGES###</div></div>
+	layout.26.value = <div class="row imagesplit"><div class="col-sm-8 intext-left-nowrap">###IMAGES###</div><div class="col-sm-16">###TEXT###</div></div>
+	rendering {
+		singleNoCaption {
+			allStdWrap.wrap = |
+			allStdWrap.dataWrap = |
+			allStdWrap.innerWrap >
+			singleStdWrap.wrap = <figure>|</figure>
+			singleStdWrap.wrap.override >
+			rowStdWrap.wrap = |
+			noRowsStdWrap.wrap = |
+			lastRowStdWrap.wrap = |
+			columnStdWrap.wrap = |
+		}
+		singleCaption {
+			caption.wrap.override = <figcaption>|</figcaption>
+		}
+		noCaption {
+			allStdWrap.wrap = |
+			rowStdWrap.wrap = |
+			noRowsStdWrap.wrap = |
+			lastRowStdWrap.wrap = |
+			columnStdWrap.wrap = |
+		}
+		splitCaption {
+			rowStdWrap.wrap = |
+			noRowsStdWrap.wrap = |
+			lastRowStdWrap.wrap = |
+			columnStdWrap.wrap = |
+		}
+	}
+	renderMethod = singleNoCaption
+	cols >
+}
+
+
 tt_content.table.20.stdWrap.outerWrap = <div class="table-container">|</div>
 
 lib.parseFunc_RTE.nonTypoTagStdWrap.encapsLines.addAttributes.P.class >

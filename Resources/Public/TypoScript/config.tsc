@@ -20,3 +20,5 @@ PID {
 		news = 35
 	}
 }
+
+styles.content.imgtext.maxW = 940
