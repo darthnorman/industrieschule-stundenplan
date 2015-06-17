@@ -1,4 +1,4 @@
-<f:if condition="{blocks}">
+﻿<f:if condition="{blocks}">
     <f:then>
         <f:form method="POST" action="list" class="row" id="form-timetable">
 			<fieldset class="col-4">
@@ -20,7 +20,7 @@
 
             <f:if condition="{classes}">
 				<fieldset class="col-4">
-					<label for="classes">Klasse:</label>
+                    <label for="classes">{label}:</label>
 					<select name="class" id="classes">
 						<option value="">bitte wählen</option>
 						<f:for each="{classes}" as="class">
