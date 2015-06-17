@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 
 class Tx_Stundenplan_Domain_Model_StundenplanModel {
 
@@ -35,18 +35,20 @@ class Tx_Stundenplan_Domain_Model_StundenplanModel {
         '16:45'
     );
 
-    protected $_basePath = '/fileadmin/user_upload/plaene/';
-
     /**
      * liefert für die angegebene Kombination aus Klasse und Block den Stundenplan in einem Array
      *
      * @param string $block
      * @param string $class
+     * @param string $basePath
      * @return array
      */
-    public function getTable($block, $class) {
+    public function getTable($block, $class, $basePath) {
         try {
-            $handle = fopen(PATH_site . $this->_basePath . $block . '/' . $class . '.txt', 'r');
+            $handle = fopen(PATH_site . $basePath . $block . '/' . $class . '.TXT', 'r');
+            if (!$handle) {
+                $handle = fopen(PATH_site . $basePath . $block . '/' . $class . '.txt', 'r');
+            }
             $content = array();
             $i = 0;
 
