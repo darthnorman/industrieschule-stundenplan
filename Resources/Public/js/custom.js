@@ -1,6 +1,8 @@
 jQuery.noConflict();
 jQuery(document).ready(function($) {
-	
+	//Lightbox
+	$('.lightbox').magnificPopup({type:'image'});
+	//News Slider
 	$('.nav-news').flexslider({
 		prevText: "vorheriges Element",
 		nextText: "nächstes Element"

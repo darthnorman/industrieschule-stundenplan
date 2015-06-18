@@ -4,6 +4,8 @@ plugin.tt_news {
 	templateFile = EXT:stundenplan/Resources/Public/Templates/Extensions/ttnews/tt_news.html
 	pid_list = {$PID.storage.news}
 	singlePid = {$PID.single.news}
+	dontUseBackPid = 1
+	useHRDates = 1
 	displayLatest {
 		subheader_stdWrap.crop = 200|...|1
 		subheader_stdWrap.outerWrap >
@@ -17,6 +19,7 @@ plugin.tt_news {
 			file.maxW = 400c
 			file.maxH = 240c
 		}
+		subheader_stdWrap.outerWrap >
 		subheader_stdWrap.append >
 	}
 	displaySingle {

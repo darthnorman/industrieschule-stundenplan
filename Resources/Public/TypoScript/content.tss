@@ -4,6 +4,11 @@ lib.stdheader {
 	2.headerStyle >
 	3.headerClass >
 }
+lib.parseFunc_RTE.externalBlocks := addToList(li)
+lib.parseFunc_RTE.externalBlocks{
+	li.stripNL=1
+	li.stdWrap.parseFunc = < lib.parseFunc
+}
 tt_content.stdWrap.prepend >
 tt_content.stdWrap.innerWrap.cObject.66.10.value >
 tt_content.stdWrap.dataWrap =
@@ -26,7 +31,9 @@ tt_content.image.20 {
 	imageStdWrapNoWidth.wrap >
 	addClassesCol >
 	addClassesImage >
-	layout.default.value = <div class="intext-left">###IMAGES###</div>###TEXT### 
+	layout.default.value = <div class="intext-right">###IMAGES###</div>###TEXT### 
+	layout.0 = TEXT
+	layout.0.value = <div class="above-center">###IMAGES###</div>###TEXT###
 	layout.1.value = <div class="above-right">###IMAGES###</div>###TEXT###
 	layout.2.value = <div class="above-left">###IMAGES###</div>###TEXT###
 	layout.8.value = ###TEXT###<div class="below-center">###IMAGES###</div>
@@ -34,8 +41,8 @@ tt_content.image.20 {
 	layout.10.value = ###TEXT###<div class="below-left">###IMAGES###</div>
 	layout.17.value = <div class="intext-right">###IMAGES###</div>###TEXT###
 	layout.18.value = <div class="intext-left">###IMAGES###</div>###TEXT###
-	layout.25.value = <div class="row imagesplit"><div class="col-sm-16">###TEXT###</div><div class="col-sm-8 intext-right-nowrap">###IMAGES###</div></div>
-	layout.26.value = <div class="row imagesplit"><div class="col-sm-8 intext-left-nowrap">###IMAGES###</div><div class="col-sm-16">###TEXT###</div></div>
+	layout.25.value = <div class="row imagesplit"><div class="col-8">###TEXT###</div><div class="col-4 intext-right-nowrap">###IMAGES###</div></div>
+	layout.26.value = <div class="row imagesplit"><div class="col-4 intext-left-nowrap">###IMAGES###</div><div class="col-8">###TEXT###</div></div>
 	rendering {
 		singleNoCaption {
 			allStdWrap.wrap = |

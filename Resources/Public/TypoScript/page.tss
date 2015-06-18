@@ -23,6 +23,7 @@ page {
 	includeJS {
 		jquery = EXT:stundenplan/Resources/Public/js/jquery.js
 		flexslider = EXT:stundenplan/Resources/Public/js/flexslider.js
+		lightbox = EXT:stundenplan/Resources/Public/js/lightbox.js
 		custom = EXT:stundenplan/Resources/Public/js/custom.js
 	}
 	meta {
