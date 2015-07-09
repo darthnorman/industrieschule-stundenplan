@@ -193,9 +193,6 @@ main a:focus {
 	color: #15203E;
 	text-decoration: none;
 }
-body > header {
-	overflow: hidden;
-}
 /* =========== BEGIN EDITING HERE =========== */
 
 /* Grid */
@@ -293,6 +290,9 @@ form fieldset {
 	margin: 0 0 10px;
 	padding: 0;
 }
+.tx-felogin-pi1 div {
+	margin: 0 0 10px;
+}
 label {
 	display: block;
 	margin-bottom: 4px;
@@ -358,6 +358,21 @@ h1.banner {
 }
 header .contact {
 	display: none;
+}
+header .logout {
+	background-color: #FF8000;
+	color: white;
+	padding: 5px 10px;
+	position: absolute;
+	right: 0;
+	text-decoration: none;
+	top: 100%;
+	z-index: 100;
+}
+header .logout:hover,
+header .logout:focus {
+	outline: 0;
+	text-decoration: underline;
 }
 .nav-toggle {
 	background: none;
@@ -462,6 +477,7 @@ header .contact {
 	width: 300%;
 }
 .nav-mobile ul ul ul {
+	left: 0 !important;
 	width: 100%;
 }
 .nav-mobile ul .tab + .tab ul {
@@ -523,6 +539,7 @@ header .contact {
 	border-top: 1px solid #565E71;
 	color: #fff;
 	font-size: 16px;
+	outline: 0;
 	padding: 10px;
 	position: relative;
 	text-shadow: 0 1px 1px rgba(0,0,0,0.5);
@@ -537,6 +554,10 @@ header .contact {
 }
 .nav-sub > ul > li > ul {
 	border-top: 1px solid #565E71;
+	display: none;
+}
+.nav-sub > ul > li.active > ul {
+	display: block;
 }
 .nav-sub ul ul .active {
 	padding-left: 18px;
@@ -675,6 +696,15 @@ header .contact {
 #form-timetable select {
 	width: 100%;
 }
+.unterrichtszeiten tr {
+	background: none;
+}
+.unterrichtszeiten tr td:first-child {
+	text-align: left;
+}
+.unterrichtszeiten tr:nth-child(3n) {
+	background-color: #f1f1f1;
+}
 .timetable th,
 .timetable td {
 	width: 18%;
@@ -714,19 +744,9 @@ header .contact {
 	font-size: smaller;
 	padding-top: 0;
 }
-.iframe-rwd {
-	height: 0;
-	overflow: hidden;
-	padding-bottom: 62.25%;
-	padding-top: 30px;
-	position: relative;
-}
-.iframe-rwd iframe {
-	height: 100%;
-	left: 0;
-	position: absolute;
-	top: 0;
-	width: 100%;
+iframe {
+	border: 0;
+	max-width: 100%;
 }
 .csc-uploads {
 	list-style: none;
@@ -750,6 +770,7 @@ header .contact {
 .csc-uploads a[href$=".xlsx"] {
 	background-image: url(../img/icon_xls.png);
 }
+main .csc-textpic-imagewrap figure,
 main .above-center figure,
 main .below-center figure {
 	text-align: center;
@@ -773,6 +794,7 @@ main figcaption {
 	color: #666;
 	font-size: smaller;
 	padding: 5px 0;
+	text-align: center !important;
 }
 main .intext-left {
 	clear: left;
@@ -784,10 +806,6 @@ footer {
 	margin-top: 20px;
 	padding: 20px 0;
 }
-footer > a {
-	display: block;
-	text-decoration: none;
-}
 .certificates {
 	border-bottom: 1px solid #ccc;
 	list-style: none;
@@ -796,6 +814,10 @@ footer > a {
 	padding: 0 0 10px;
 	text-align: center;
 	width: 100%;
+}
+.certificates a {
+	display: block;
+	text-decoration: none;
 }
 .certificates li {
 	display: inline-block;
@@ -1133,7 +1155,7 @@ html[xmlns] .flexslider .slides {
 	.startblock:hover h2 {
 		background-color: rgba(21,32,62,0.85);
 		border-bottom: 6px solid #ff8000;
-		padding-top: 5%;
+		padding-top: 0%;
 	}
 	.startblock ul {
 		display: block;
@@ -1145,9 +1167,12 @@ html[xmlns] .flexslider .slides {
 		position: absolute;
 		text-align: center;
 		transition: 0.25s all;
-		top: 20%;
+		top: 15%;
 		width: 100%;
 		z-index: 10;
+	}
+	.startblock li {
+		margin-bottom: 0;
 	}
 }
 
@@ -1157,10 +1182,13 @@ html[xmlns] .flexslider .slides {
 		background: #15203e url(../img/industrieschule_chemnitz_bsz_technik_haus.jpg) no-repeat right 200px top;
 	}
 	.startblock:hover h2 {
-		padding-top: 15%;
+		padding-top: 10%;
 	}
 	.startblock ul {
-		top: 30%;
+		top: 25%;
+	}
+	.startblock li {
+		margin-bottom: 5px;
 	}
 }
 
@@ -1186,6 +1214,12 @@ html[xmlns] .flexslider .slides {
 	}
 	.flex-direction-nav .flex-next {
 		right: -20px;
+	}
+	.startblock {
+		height: 406.65px;
+	}
+	.startblock a {
+		height: 100%;
 	}
 }
 

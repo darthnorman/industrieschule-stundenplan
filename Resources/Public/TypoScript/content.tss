@@ -1,3 +1,8 @@
+TCEMAIN.permissions {
+	# ID der Benutzergruppe
+	groupid = 4
+}
+
 lib.stdheader = COA
 lib.stdheader {
 	stdWrap.dataWrap >

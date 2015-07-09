@@ -79,6 +79,7 @@ lib.nav.sub {
 	1 = TMENU
 	1 {	
 		noBlur = 1
+		expAll = 1
 		wrap = <ul>|</ul>
 		NO = 1
 		NO.wrapItemAndSub = <li>|</li>
@@ -113,6 +114,7 @@ lib.nav.sub {
 		CUR < .ACT
 	}
 	2 < .1
+	2.expAll = 0
 	2.NO.wrapItemAndSub = <li>|</li>
 	2.NO.stdWrap.wrap.cObject >
 	2.ACT.stdWrap.wrap.cObject >
@@ -120,20 +122,51 @@ lib.nav.sub {
 	3 < .2
 }
 
-lib.sponsors = TEXT
+lib.sponsors = COA
 lib.sponsors {
-	value (
-	<ul class="certificates">
-		<li><img src="typo3conf/ext/stundenplan/Resources/Public/img/cisco.jpg" alt="Cisco Networking Academy" title="Cisco Networking Academy"/></li>
-		<li><img src="typo3conf/ext/stundenplan/Resources/Public/img/pearson.jpg" alt="Pearson" title="Pearson"/></li>
-		<li><img src="typo3conf/ext/stundenplan/Resources/Public/img/ecdl.jpg" alt="ECDL" title="ECDL"/></li>
-		<li><img src="typo3conf/ext/stundenplan/Resources/Public/img/eu.jpg" alt="EU" title="EU"/></li>
-		<li><img src="typo3conf/ext/stundenplan/Resources/Public/img/efre.jpg" alt="EFRE" title="EFRE"/></li>
-		<li><img src="typo3conf/ext/stundenplan/Resources/Public/img/certqua.jpg" alt="Certqua" title="Certqua"/></li>
-		<li><img src="typo3conf/ext/stundenplan/Resources/Public/img/foerderverein.jpg" alt="Förderverein" title="Förderverein"/></li>
-	</ul>
-	)
-	typolink.parameter = zusatzqualifizierung
+	wrap = <ul class="certificates">|</ul>
+	10 = TEXT
+	10 {
+		value = <img src="typo3conf/ext/stundenplan/Resources/Public/img/cisco.jpg" alt="Cisco Networking Academy" title="Cisco Networking Academy"/>
+		wrap = <li>|</li>
+		typolink.parameter = 43
+	}
+	20 = TEXT
+	20 {
+		value = <img src="typo3conf/ext/stundenplan/Resources/Public/img/pearson.jpg" alt="Pearson" title="Pearson"/>
+		wrap = <li>|</li>
+		typolink.parameter = 44
+	}
+	30 = TEXT
+	30 {
+		value = <img src="typo3conf/ext/stundenplan/Resources/Public/img/ecdl.jpg" alt="ECDL" title="ECDL"/>
+		wrap = <li>|</li>
+		typolink.parameter = 42
+	}
+	40 = TEXT
+	40 {
+		value = <img src="typo3conf/ext/stundenplan/Resources/Public/img/eu.jpg" alt="EU" title="EU"/>
+		wrap = <li>|</li>
+		typolink.parameter = 45
+	}
+	50 = TEXT
+	50 {
+		value = <img src="typo3conf/ext/stundenplan/Resources/Public/img/efre.jpg" alt="EFRE" title="EFRE"/>
+		wrap = <li>|</li>
+		typolink.parameter = 45
+	}
+	60 = TEXT
+	60 {
+		value = <img src="typo3conf/ext/stundenplan/Resources/Public/img/certqua.jpg" alt="Certqua" title="Certqua"/>
+		wrap = <li>|</li>
+		typolink.parameter = 45
+	}
+	70 = TEXT
+	70 {
+		value = <img src="typo3conf/ext/stundenplan/Resources/Public/img/foerderverein.jpg" alt="Förderverein" title="Förderverein"/>
+		wrap = <li>|</li>
+		typolink.parameter = 39
+	}
 }
 
 lib.copyright = COA
@@ -175,14 +208,14 @@ lib.header {
 	10 = TEXT
 	10 {
 		value = <img src="typo3conf/ext/stundenplan/Resources/Public/img/logo_industrieschule_chemnitz_bsz_technik.jpg" alt="Logo der Industrieschule Chemnitz"/>
-		wrap = <h1 class="banner"><a id="logo" role="banner" href="/">|</a></h1>
+		wrap = <h1 class="banner clearfix"><a id="logo" role="banner" href="/">|</a></h1>
 	}
 	20 = TEXT
 	20 {
 		wrap = <div class="contact">|</div>
 		value (
-			<p>Industrieschule Chemnitz<br />Park der ODF 1<br />09111 Chemnitz</p>
-			<p>Telefon: +49 371 4882600<br />Fax: +49 371 488 2699</p>
+			<p>Industrieschule Chemnitz<br />Park der Opfer des Faschismus 1<br />09111 Chemnitz</p>
+			<p>Telefon: 0371 / 488 2600<br />Fax: 0371 / 488 2699</p>
 			<p>
 				<a href="mailto:bsz.c1@industrieschule.de">bsz.c1@industrieschule.de</a><br />
 				<a href="http://www.industrieschule.de">www.industrieschule.de</a>
@@ -214,3 +247,17 @@ lib.header {
 		4 < .2
 	}
 }
+#Logout
+[usergroup = *]
+lib.header {
+	40 = TEXT
+	40 {
+		value = Logout
+		typolink {
+			ATagParams = class="logout"
+			parameter.data = TSFE:id
+			additionalParams = &logintype=logout
+		}
+	}
+}
+[global]

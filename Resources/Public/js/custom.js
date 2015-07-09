@@ -27,4 +27,14 @@ jQuery(document).ready(function($) {
     $('#classes').change(function() {
         $('#form-timetable').submit();
     });
+	// Accordion (Submenu)
+	$('body').on('click', '.nav-sub i.arrow', function() {
+		var curTrig = $(this);
+		var curTrigIsActive = $(curTrig).parents('li').hasClass('active');
+		$('.nav-sub > ul > li.active').removeClass('active');
+		if (!curTrigIsActive) {
+			curTrig.parents('li').toggleClass('active');
+		}
+		return false;
+	});
 });
